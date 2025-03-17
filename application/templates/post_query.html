@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Query</title>
+    <link rel="stylesheet" href="../static/css/post_query.css">
+</head>
+<body>
+
+    <form action="" method="POST">
+        {{ form.csrf_token() }}
+        <fieldset class="form-container">
+            <legend class="form-title">Post a Query</legend>
+
+            <div class="form-group">
+                {{ form.title.label(class="form-label") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-input error-input") }}
+                    {% for error in form.title.errors %}
+                        <div class="error-message">
+                            <span>{{ error }}</span>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.title(class="form-input") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.description.label(class="form-label") }}
+                {% if form.description.errors %}
+                    {{ form.description(class="form-textarea error-input") }}
+                    {% for error in form.description.errors %}
+                        <div class="error-message">
+                            <span>{{ error }}</span>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.description(class="form-textarea") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.domain.label(class="form-label") }}
+                {% if form.domain.errors %}
+                    {{ form.domain(class="form-select error-input") }}
+                    {% for error in form.domain.errors %}
+                        <div class="error-message">
+                            <span>{{ error }}</span>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.domain(class="form-select") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.submit(class="submit-btn") }}
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+</html>

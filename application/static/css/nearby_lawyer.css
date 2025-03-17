@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.page-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar select, .search-bar input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Lawyers Grid */
+.lawyers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.lawyer-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lawyer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lawyer-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.lawyer-details h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.lawyer-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination button:hover {
+    background-color: #555;
+}
+
+.pagination span {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lawyers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .search-bar select, .search-bar input {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

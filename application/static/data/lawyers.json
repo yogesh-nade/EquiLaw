@@ -1,0 +1,490 @@
+[
+  {
+    "name": "Aarav Sharma",
+    "domain": "Criminal Law",
+    "city_of_practice": "Mumbai",
+    "email": "aarav.sharma@lawfirm.com",
+    "experience": 12,
+    "cases_solved": 150
+  },
+  {
+    "name": "Neha Gupta",
+    "domain": "Corporate Law",
+    "city_of_practice": "Delhi",
+    "email": "neha.gupta@lawfirm.com",
+    "experience": 8,
+    "cases_solved": 90
+  },
+  {
+    "name": "Rahul Singh",
+    "domain": "Family Law",
+    "city_of_practice": "Bangalore",
+    "email": "rahul.singh@lawfirm.com",
+    "experience": 15,
+    "cases_solved": 200
+  },
+  {
+    "name": "Priya Patel",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Hyderabad",
+    "email": "priya.patel@lawfirm.com",
+    "experience": 10,
+    "cases_solved": 120
+  },
+  {
+    "name": "Vikram Mehta",
+    "domain": "Tax Law",
+    "city_of_practice": "Chennai",
+    "email": "vikram.mehta@lawfirm.com",
+    "experience": 18,
+    "cases_solved": 250
+  },
+  {
+    "name": "Ananya Reddy",
+    "domain": "Civil Law",
+    "city_of_practice": "Kolkata",
+    "email": "ananya.reddy@lawfirm.com",
+    "experience": 7,
+    "cases_solved": 80
+  },
+  {
+    "name": "Arjun Kapoor",
+    "domain": "Criminal Law",
+    "city_of_practice": "Pune",
+    "email": "arjun.kapoor@lawfirm.com",
+    "experience": 11,
+    "cases_solved": 140
+  },
+  {
+    "name": "Isha Choudhary",
+    "domain": "Corporate Law",
+    "city_of_practice": "Ahmedabad",
+    "email": "isha.choudhary@lawfirm.com",
+    "experience": 9,
+    "cases_solved": 100
+  },
+  {
+    "name": "Rohan Malhotra",
+    "domain": "Family Law",
+    "city_of_practice": "Jaipur",
+    "email": "rohan.malhotra@lawfirm.com",
+    "experience": 14,
+    "cases_solved": 180
+  },
+  {
+    "name": "Sanya Verma",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Lucknow",
+    "email": "sanya.verma@lawfirm.com",
+    "experience": 6,
+    "cases_solved": 70
+  },
+  {
+    "name": "Karan Bhatia",
+    "domain": "Tax Law",
+    "city_of_practice": "Chandigarh",
+    "email": "karan.bhatia@lawfirm.com",
+    "experience": 16,
+    "cases_solved": 220
+  },
+  {
+    "name": "Meera Joshi",
+    "domain": "Civil Law",
+    "city_of_practice": "Nagpur",
+    "email": "meera.joshi@lawfirm.com",
+    "experience": 5,
+    "cases_solved": 60
+  },
+  {
+    "name": "Aryan Khanna",
+    "domain": "Criminal Law",
+    "city_of_practice": "Surat",
+    "email": "aryan.khanna@lawfirm.com",
+    "experience": 13,
+    "cases_solved": 160
+  },
+  {
+    "name": "Divya Rao",
+    "domain": "Corporate Law",
+    "city_of_practice": "Kanpur",
+    "email": "divya.rao@lawfirm.com",
+    "experience": 10,
+    "cases_solved": 110
+  },
+  {
+    "name": "Ravi Saxena",
+    "domain": "Family Law",
+    "city_of_practice": "Indore",
+    "email": "ravi.saxena@lawfirm.com",
+    "experience": 17,
+    "cases_solved": 230
+  },
+  {
+    "name": "Tanvi Desai",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Bhopal",
+    "email": "tanvi.desai@lawfirm.com",
+    "experience": 8,
+    "cases_solved": 95
+  },
+  {
+    "name": "Aditya Nair",
+    "domain": "Tax Law",
+    "city_of_practice": "Visakhapatnam",
+    "email": "aditya.nair@lawfirm.com",
+    "experience": 19,
+    "cases_solved": 260
+  },
+  {
+    "name": "Pooja Iyer",
+    "domain": "Civil Law",
+    "city_of_practice": "Patna",
+    "email": "pooja.iyer@lawfirm.com",
+    "experience": 6,
+    "cases_solved": 75
+  },
+  {
+    "name": "Rishi Chopra",
+    "domain": "Criminal Law",
+    "city_of_practice": "Vadodara",
+    "email": "rishi.chopra@lawfirm.com",
+    "experience": 12,
+    "cases_solved": 155
+  },
+  {
+    "name": "Anjali Menon",
+    "domain": "Corporate Law",
+    "city_of_practice": "Thane",
+    "email": "anjali.menon@lawfirm.com",
+    "experience": 9,
+    "cases_solved": 105
+  },
+  {
+    "name": "Siddharth Rana",
+    "domain": "Family Law",
+    "city_of_practice": "Ghaziabad",
+    "email": "siddharth.rana@lawfirm.com",
+    "experience": 14,
+    "cases_solved": 190
+  },
+  {
+    "name": "Kavita Srinivasan",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Ludhiana",
+    "email": "kavita.srinivasan@lawfirm.com",
+    "experience": 7,
+    "cases_solved": 85
+  },
+  {
+    "name": "Nikhil Agarwal",
+    "domain": "Tax Law",
+    "city_of_practice": "Agra",
+    "email": "nikhil.agarwal@lawfirm.com",
+    "experience": 20,
+    "cases_solved": 270
+  },
+  {
+    "name": "Shreya Kapoor",
+    "domain": "Civil Law",
+    "city_of_practice": "Nashik",
+    "email": "shreya.kapoor@lawfirm.com",
+    "experience": 5,
+    "cases_solved": 65
+  },
+  {
+    "name": "Vivek Chawla",
+    "domain": "Criminal Law",
+    "city_of_practice": "Faridabad",
+    "email": "vivek.chawla@lawfirm.com",
+    "experience": 11,
+    "cases_solved": 145
+  },
+  {
+    "name": "Anika Rajput",
+    "domain": "Corporate Law",
+    "city_of_practice": "Meerut",
+    "email": "anika.rajput@lawfirm.com",
+    "experience": 8,
+    "cases_solved": 98
+  },
+  {
+    "name": "Rajat Mehra",
+    "domain": "Family Law",
+    "city_of_practice": "Rajkot",
+    "email": "rajat.mehra@lawfirm.com",
+    "experience": 16,
+    "cases_solved": 210
+  },
+  {
+    "name": "Ishita Banerjee",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Kalyan",
+    "email": "ishita.banerjee@lawfirm.com",
+    "experience": 6,
+    "cases_solved": 72
+  },
+  {
+    "name": "Amit Trivedi",
+    "domain": "Tax Law",
+    "city_of_practice": "Varanasi",
+    "email": "amit.trivedi@lawfirm.com",
+    "experience": 18,
+    "cases_solved": 240
+  },
+  {
+    "name": "Sneha Nair",
+    "domain": "Civil Law",
+    "city_of_practice": "Srinagar",
+    "email": "sneha.nair@lawfirm.com",
+    "experience": 4,
+    "cases_solved": 50
+  },
+  {
+    "name": "Rohit Bajaj",
+    "domain": "Criminal Law",
+    "city_of_practice": "Aurangabad",
+    "email": "rohit.bajaj@lawfirm.com",
+    "experience": 10,
+    "cases_solved": 130
+  },
+  {
+    "name": "Mira Shah",
+    "domain": "Corporate Law",
+    "city_of_practice": "Dhanbad",
+    "email": "mira.shah@lawfirm.com",
+    "experience": 7,
+    "cases_solved": 88
+  },
+  {
+    "name": "Varun Deshmukh",
+    "domain": "Family Law",
+    "city_of_practice": "Amritsar",
+    "email": "varun.deshmukh@lawfirm.com",
+    "experience": 15,
+    "cases_solved": 195
+  },
+  {
+    "name": "Nandini Reddy",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Allahabad",
+    "email": "nandini.reddy@lawfirm.com",
+    "experience": 9,
+    "cases_solved": 102
+  },
+  {
+    "name": "Kunal Malhotra",
+    "domain": "Tax Law",
+    "city_of_practice": "Ranchi",
+    "email": "kunal.malhotra@lawfirm.com",
+    "experience": 17,
+    "cases_solved": 225
+  },
+  {
+    "name": "Rhea Kapoor",
+    "domain": "Civil Law",
+    "city_of_practice": "Coimbatore",
+    "email": "rhea.kapoor@lawfirm.com",
+    "experience": 5,
+    "cases_solved": 68
+  },
+  {
+    "name": "Yash Gupta",
+    "domain": "Criminal Law",
+    "city_of_practice": "Jabalpur",
+    "email": "yash.gupta@lawfirm.com",
+    "experience": 12,
+    "cases_solved": 148
+  },
+  {
+    "name": "Ananya Singh",
+    "domain": "Corporate Law",
+    "city_of_practice": "Gwalior",
+    "email": "ananya.singh@lawfirm.com",
+    "experience": 8,
+    "cases_solved": 96
+  },
+  {
+    "name": "Rishi Patel",
+    "domain": "Family Law",
+    "city_of_practice": "Vijayawada",
+    "email": "rishi.patel@lawfirm.com",
+    "experience": 14,
+    "cases_solved": 185
+  },
+  {
+    "name": "Ishaan Sharma",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Jodhpur",
+    "email": "ishaan.sharma@lawfirm.com",
+    "experience": 7,
+    "cases_solved": 82
+  },
+  {
+    "name": "Aarohi Verma",
+    "domain": "Tax Law",
+    "city_of_practice": "Madurai",
+    "email": "aarohi.verma@lawfirm.com",
+    "experience": 19,
+    "cases_solved": 255
+  },
+  {
+    "name": "Rohan Kapoor",
+    "domain": "Civil Law",
+    "city_of_practice": "Guwahati",
+    "email": "rohan.kapoor@lawfirm.com",
+    "experience": 6,
+    "cases_solved": 74
+  },
+  {
+    "name": "Neha Reddy",
+    "domain": "Criminal Law",
+    "city_of_practice": "Hubli",
+    "email": "neha.reddy@lawfirm.com",
+    "experience": 11,
+    "cases_solved": 135
+  },
+  {
+    "name": "Arjun Singh",
+    "domain": "Corporate Law",
+    "city_of_practice": "Mysore",
+    "email": "arjun.singh@lawfirm.com",
+    "experience": 9,
+    "cases_solved": 108
+  },
+  {
+    "name": "Priya Malhotra",
+    "domain": "Family Law",
+    "city_of_practice": "Raipur",
+    "email": "priya.malhotra@lawfirm.com",
+    "experience": 16,
+    "cases_solved": 205
+  },
+  {
+    "name": "Vikram Choudhary",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Kochi",
+    "email": "vikram.choudhary@lawfirm.com",
+    "experience": 8,
+    "cases_solved": 92
+  },
+  {
+    "name": "Anika Nair",
+    "domain": "Tax Law",
+    "city_of_practice": "Bhubaneswar",
+    "email": "anika.nair@lawfirm.com",
+    "experience": 18,
+    "cases_solved": 235
+  },
+  {
+    "name": "Rahul Verma",
+    "domain": "Civil Law",
+    "city_of_practice": "Dehradun",
+    "email": "rahul.verma@lawfirm.com",
+    "experience": 5,
+    "cases_solved": 62
+  },
+  {
+    "name": "Sanya Kapoor",
+    "domain": "Criminal Law",
+    "city_of_practice": "Asansol",
+    "email": "sanya.kapoor@lawfirm.com",
+    "experience": 10,
+    "cases_solved": 125
+  },
+  {
+    "name": "Aditya Rao",
+    "domain": "Corporate Law",
+    "city_of_practice": "Bareilly",
+    "email": "aditya.rao@lawfirm.com",
+    "experience": 7,
+    "cases_solved": 87
+  },
+  {
+    "name": "Ishita Singh",
+    "domain": "Family Law",
+    "city_of_practice": "Moradabad",
+    "email": "ishita.singh@lawfirm.com",
+    "experience": 15,
+    "cases_solved": 198
+  },
+  {
+    "name": "Karan Desai",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Jalandhar",
+    "email": "karan.desai@lawfirm.com",
+    "experience": 9,
+    "cases_solved": 104
+  },
+  {
+    "name": "Meera Bhatia",
+    "domain": "Tax Law",
+    "city_of_practice": "Warangal",
+    "email": "meera.bhatia@lawfirm.com",
+    "experience": 17,
+    "cases_solved": 228
+  },
+  {
+    "name": "Ravi Kapoor",
+    "domain": "Civil Law",
+    "city_of_practice": "Gurgaon",
+    "email": "ravi.kapoor@lawfirm.com",
+    "experience": 6,
+    "cases_solved": 70
+  },
+  {
+    "name": "Tanvi Sharma",
+    "domain": "Criminal Law",
+    "city_of_practice": "Noida",
+    "email": "tanvi.sharma@lawfirm.com",
+    "experience": 12,
+    "cases_solved": 152
+  },
+  {
+    "name": "Aryan Patel",
+    "domain": "Corporate Law",
+    "city_of_practice": "Pimpri-Chinchwad",
+    "email": "aryan.patel@lawfirm.com",
+    "experience": 8,
+    "cases_solved": 99
+  },
+  {
+    "name": "Divya Nair",
+    "domain": "Family Law",
+    "city_of_practice": "Jamnagar",
+    "email": "divya.nair@lawfirm.com",
+    "experience": 14,
+    "cases_solved": 188
+  },
+  {
+    "name": "Rishi Reddy",
+    "domain": "Intellectual Property Law",
+    "city_of_practice": "Bhilai",
+    "email": "rishi.reddy@lawfirm.com",
+    "experience": 7,
+    "cases_solved": 84
+  },
+  {
+    "name": "Anjali Kapoor",
+    "domain": "Tax Law",
+    "city_of_practice": "Cuttack",
+    "email": "anjali.kapoor@lawfirm.com",
+    "experience": 19,
+    "cases_solved": 245
+  },
+  {
+    "name": "Siddharth Sharma",
+    "domain": "Civil Law",
+    "city_of_practice": "Kollam",
+    "email": "siddharth.sharma@lawfirm.com",
+    "experience": 5,
+    "cases_solved": 64
+  },
+  {
+    "name": "Kavita Kapoor",
+    "domain": "Criminal Law",
+    "city_of_practice": "Udaipur",
+    "email": "kavita.kapoor@lawfirm.com",
+    "experience": 10,
+    "cases_solved": 132
+  }
+]

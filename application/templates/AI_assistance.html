@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/AI_assistance.css') }}">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <div class="container">
+        <h1><i class="fas fa-balance-scale"></i>  AI Legal Assistance</h1>
+        <div id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your legal question...">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Function to format the bot's response
+        function formatResponse(response) {
+            // Replace **text** with <strong>text</strong> for bold
+            response = response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Replace new lines with <br> tags
+            response = response.replace(/\n/g, '<br>');
+            return response;
+        }
+
+        sendBtn.addEventListener('click', async () => {
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                // Add user message to chat box (right side)
+                chatBox.innerHTML += `
+                    <div class="chat-message user">
+                        <div class="message">
+                            <strong>You:</strong> ${userMessage}
+                        </div>
+                    </div>
+                `;
+                userInput.value = '';
+
+                // Show loading indicator (left side)
+                chatBox.innerHTML += `
+                    <div class="chat-message bot">
+                        <div class="message loading">
+                            <i class="fas fa-spinner fa-spin"></i> Thinking...
+                        </div>
+                    </div>
+                `;
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Send message to server and get response
+                try {
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message: userMessage }),
+                    });
+                    const data = await response.json();
+
+                    // Remove loading indicator
+                    const loadingMessage = chatBox.querySelector('.loading');
+                    if (loadingMessage) loadingMessage.remove();
+
+                    // Add bot response to chat box (left side)
+                    if (data.response) {
+                        const formattedResponse = formatResponse(data.response);
+                        chatBox.innerHTML += `
+                            <div class="chat-message bot">
+                                <div class="message">
+                                    <strong>Legal Chatbot:</strong> ${formattedResponse}
+                                </div>
+                            </div>
+                        `;
+                    } else if (data.error) {
+                        chatBox.innerHTML += `
+                            <div class="chat-message bot error">
+                                <div class="message">
+                                    <strong>Error:</strong> ${data.error}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+                } catch (error) {
+                    // Remove loading indicator
+                    const loadingMessage = chatBox.querySelector('.loading');
+                    if (loadingMessage) loadingMessage.remove();
+
+                    // Show error message (left side)
+                    chatBox.innerHTML += `
+                        <div class="chat-message bot error">
+                            <div class="message">
+                                <strong>Error:</strong> ${error.message}
+                            </div>
+                        </div>
+                    `;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            }
+        });
+    </script>
+
+
+{% endblock %}

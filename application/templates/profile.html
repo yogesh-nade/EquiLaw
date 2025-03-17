@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{ user.profile_pic or url_for('static', filename='images/bk14.jpg') }}" alt="Profile Picture" class="profile-img">
+            <h2>{{ user.username }}</h2>
+        </div>
+        <div class="profile-info">
+            <!-- <p><strong>Phone</strong> <span>{{ user.phone }}</span></p> -->
+            <p><strong>Phone</strong> <span>+91 7461516430</span></p>
+            <p><strong>Mail</strong> <span>{{ user.email }}</span></p>
+        </div>
+        <div class="profile-options">
+            <div class="option">
+                <i class="fas fa-moon"></i>
+                <span>Dark mode</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="option">
+                <i class="fas fa-user"></i>
+                <span>Profile details</span>
+            </div>
+            <div class="option">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+            <div class="option logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span><a href="{{ url_for('logout') }}">Logout</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

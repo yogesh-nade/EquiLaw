@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Add CSS for Community Page -->
+<link rel="stylesheet" href="../static/css/community.css">
+
+<div class="container">
+    <h1 class="page-title">Community Support</h1>
+
+    <!-- Post a New Query Button (Aligned to Right) -->
+    <div class="post-query">
+        <a href="{{ url_for('post_query', id=user._id) }}" class="btn btn-primary no-underline">📌 Post a New Query</a>
+    </div>
+
+    <!-- Your Queries Section -->
+    <h2 class="section-title">Your Queries</h2>
+    <div class="your-queries-container">
+        <!-- <h2 class="section-title">Your Queries</h2> -->
+       
+        <div class="your-queries-box">
+            <div class="query-carousel">
+                <div class="query-wrapper">
+                    {% if user_queries %}
+                        {% for query in user_queries %}
+                            <div class="query-card">
+                                <h3 class="query-title">{{ query.title }}</h3>
+                                <p class="query-meta"><strong>Domain:</strong> {{ query.domain }}</p>
+                                <p class="query-description">{{ query.description }}</p>
+                                <p class="query-meta"><small>Posted on: {{ query.date_posted.strftime('%Y-%m-%d') }}</small></p>
+
+                                <!-- View Replies Button -->
+                                <button class="btn btn-secondary view-replies" data-query-id="query{{ loop.index }}">
+                                    💬 View Replies
+                                </button>
+
+                                <!-- Replies Section (Initially Hidden) -->
+                                <div class="replies hidden" id="query{{ loop.index }}">
+                                    {% if query.replies %}
+                                        {% for reply in query.replies %}
+                                            <div class="reply-card">
+                                                <p><strong>{{ reply.replyer }}:</strong> {{ reply.text }}</p>
+                                                <p><small>Replied on: {{ reply.timestamp.strftime('%Y-%m-%d') }}</small></p>
+                                            </div>
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>No replies yet.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>You haven't posted any queries yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Others Section -->
+    <div class="section">
+        <h2 class="section-title">Help Others Solve Their Problems</h2>
+        {% if other_queries %}
+            <div class="domain-container">
+                {% for domain, queries in other_queries|groupby('domain') %}
+                    <div class="domain-row">
+                        <h3 class="domain-title">{{ domain }}</h3>
+                        <div class="query-carousel">
+                            <div class="query-wrapper">
+                                {% for query in queries %}
+                                    <div class="query-card">
+                                        <h3 class="query-title">{{ query.title }}</h3>
+                                        <p class="query-description">{{ query.description }}</p>
+                                        <!-- <p class="query-meta"><small>Posted by: {{ query.questioner_id }}</small></p> -->
+                                        <p class="query-meta"><small>Posted on: {{ query.date_posted.strftime('%Y-%m-%d') }}</small></p>
+
+                                        <!-- Reply Button -->
+                                        <a href="{{ url_for('reply', query_id=query._id, id=user._id) }}" class="btn btn-secondary">💬 Reply</a> 
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No queries available.</p>
+        {% endif %}
+    </div>
+
+</div>
+
+<!-- JavaScript for toggling replies -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".view-replies").forEach(button => {
+            button.addEventListener("click", function() {
+                const queryId = this.getAttribute("data-query-id");
+                const repliesDiv = document.getElementById(queryId);
+                if (repliesDiv.classList.contains("hidden")) {
+                    repliesDiv.classList.remove("hidden");
+                    this.textContent = "🔽 Hide Replies";
+                } else {
+                    repliesDiv.classList.add("hidden");
+                    this.textContent = "💬 View Replies";
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}

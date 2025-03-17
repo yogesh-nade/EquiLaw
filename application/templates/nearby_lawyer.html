@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Add CSS for Nearby Lawyers Page -->
+<link rel="stylesheet" href="../static/css/nearby_lawyer.css">
+
+<div class="container">
+    <h1 class="page-title">Find Nearby Lawyers</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <form id="search-form">
+            <select id="domain">
+                <option value="">Select Domain</option>
+                {% for domain in domains %}
+                    <option value="{{ domain }}">{{ domain }}</option>
+                {% endfor %}
+            </select>
+            <select id="city">
+                <option value="">Select City</option>
+                {% for city in cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Lawyers Grid Section -->
+    <div class="lawyers-grid">
+        <!-- Lawyers will be dynamically inserted here by JavaScript -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prev-page">Previous</button>
+        <span id="page-info">Page 1 of 1</span>
+        <button id="next-page">Next</button>
+    </div>
+</div>
+
+<!-- JavaScript for Search and Pagination -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Parse the lawyers JSON data passed from Flask
+        const lawyers = JSON.parse('{{ lawyers | safe }}');
+        const lawyersPerPage = 12;
+        let currentPage = 1;
+
+        // Function to display lawyers based on the current page
+        function displayLawyers(page, filteredLawyers = lawyers) {
+            const start = (page - 1) * lawyersPerPage;
+            const end = start + lawyersPerPage;
+            const lawyersToShow = filteredLawyers.slice(start, end);
+
+            const lawyersGrid = document.querySelector(".lawyers-grid");
+            lawyersGrid.innerHTML = "";
+
+            lawyersToShow.forEach(lawyer => {
+                const card = document.createElement("div");
+                card.className = "lawyer-card";
+                card.innerHTML = `
+                    <div class="lawyer-icon">👤</div>
+                    <div class="lawyer-details">
+                        <h3>${lawyer.name}</h3>
+                        <p><strong>Domain:</strong> ${lawyer.domain}</p>
+                        <p><strong>City:</strong> ${lawyer.city_of_practice}</p>
+                        <p><strong>Experience:</strong> ${lawyer.experience} years</p>
+                        <p><strong>Cases Solved:</strong> ${lawyer.cases_solved}</p>
+                        <p><strong>Email:</strong> ${lawyer.email}</p>
+                    </div>
+                `;
+                lawyersGrid.appendChild(card);
+            });
+
+            // Update page info
+            document.getElementById("page-info").textContent = `Page ${page} of ${Math.ceil(filteredLawyers.length / lawyersPerPage)}`;
+        }
+
+        // Initial display
+        displayLawyers(currentPage);
+
+        // Pagination buttons
+        document.getElementById("next-page").addEventListener("click", () => {
+            if (currentPage < Math.ceil(lawyers.length / lawyersPerPage)) {
+                currentPage++;
+                displayLawyers(currentPage);
+            }
+        });
+
+        document.getElementById("prev-page").addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayLawyers(currentPage);
+            }
+        });
+
+        // Search functionality
+        document.getElementById("search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const domain = document.getElementById("domain").value.toLowerCase();
+            const city = document.getElementById("city").value.toLowerCase();
+
+            const filteredLawyers = lawyers.filter(lawyer => {
+                const matchesDomain = domain ? lawyer.domain.toLowerCase() === domain : true;
+                const matchesCity = city ? lawyer.city_of_practice.toLowerCase() === city : true;
+                return matchesDomain && matchesCity;
+            });
+
+            // Reset pagination
+            currentPage = 1;
+            displayLawyers(currentPage, filteredLawyers);
+        });
+    });
+</script>
+
+{% endblock %}

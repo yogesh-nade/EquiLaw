@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SweetAlert (For Flash Messages) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.12.5/dist/sweetalert2.all.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    
+    <title>Code Jurist</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="brand-container">
+            <a class="brand">Code Jurist</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home', id=user._id) }}">Home</a></li>
+            <li><a href="{{ url_for('nearby_lawyer', id=user._id) }}">NearBy Lawyers</a></li>
+            <li><a href="{{ url_for('community', id=user._id) }}">Community Support</a></li>
+            <li><a href="{{ url_for('document_assistance', id=user._id) }}">Document Assistance</a></li>
+            <li><a href="{{ url_for('AI_assistance', id=user._id) }}">AI Legal Assistance</a></li>
+        </ul>
+        <div class="navbar-right">
+            {% if user %}
+                <div class="dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown()">
+                        {{ user.username }} ▼
+                    </button>
+                    <div class="dropdown-menu" id="userDropdown">
+                        <a href="{{ url_for('profile', id=user._id) }}">My Profile</a>
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <script>
+                        Swal.fire({
+                            title: "{{ category.title() }}!",
+                            text: "{{ message }}",
+                            icon: "{{ category }}",
+                            closeOnConfirm: false
+                        });
+                    </script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 LegalAid. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleDropdown() {
+        document.querySelector('.dropdown').classList.toggle('active');
+    }
+
+    document.addEventListener('click', function(event) {
+        let dropdown = document.querySelector('.dropdown');
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>

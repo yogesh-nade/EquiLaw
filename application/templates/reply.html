@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reply to Query</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reply.css') }}">
+
+</head>
+<body>
+
+    <div class="query-box">
+        <h2 class="form-title">Reply to Query</h2>
+        <h3>{{ query.title }}</h3>
+        <p><strong>Domain:</strong> {{ query.domain }}</p>
+        <p>{{ query.description }}</p>
+    </div>
+
+    <form action="" method="POST">
+        {{ form.csrf_token() }}
+        <fieldset class="form-container">
+            <legend class="form-title">Post Your Reply</legend>
+
+            <div class="form-group">
+                {{ form.reply_text.label(class="form-label") }}
+                {% if form.reply_text.errors %}
+                    {{ form.reply_text(class="form-textarea error-input") }}
+                    {% for error in form.reply_text.errors %}
+                        <div class="error-message">
+                            <span>{{ error }}</span>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.reply_text(class="form-textarea") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.submit(class="submit-btn") }}
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Add CSS specifically for this page -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+<div class="container">
+    <!-- Legal Resources Section -->
+    <section class="legal-resources">
+        <h2>Legal Resources</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-image" style="background-image: url('../static/images/ipc.jpg');"></div>
+                <h3>Indian Penal Code (IPC)</h3>
+                <div class="button-container">
+                    <a href="/static/pdfs/ipc.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-image" style="background-image: url('../static/images/coi.jpg');"></div>
+                <h3>Constitution of India</h3>
+                <div class="button-container">
+                    <a href="/static/pdfs/constitution.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-image" style="background-image: url('../static/images/crpc.jpg');"></div>
+                <h3>Code of Criminal Procedure (CrPC)</h3>
+                <div class="button-container">
+                    <a href="/static/pdfs/crpc.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-image" style="background-image: url('../static/images/cpc.jpg');"></div>
+                <h3>Code of Civil Procedure (CPC)</h3>
+                <div class="button-container">
+                    <a href="/static/pdfs/cpc.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-image" style="background-image: url('../static/images/ica.jpg');"></div>
+                <h3>Indian Contract Act</h3>
+                <div class="button-container">
+                    <a href="/static/pdfs/contract-act.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-image" style="background-image: url('../static/images/cpa.jpg');"></div>
+                <h3>Consumer Protection Act</h3>
+                <div class="button-container">
+                    <a href="/static/pdfs/consumer-law.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="latest-news">
+        <h2>Latest Legal News in India</h2>
+        <div class="news-scroll-container">
+            <div class="news-grid">
+                {% if news %}
+                    {% for article in news %}
+                        <div class="news-card">
+                            <img src="{{ article.urlToImage if article.urlToImage else url_for('static', filename='images/bk19.jpg') }}" 
+                                 alt="News Image">
+                            <h3>{{ article.title }}</h3>
+                            <p>{{ article.description }}</p>
+                            <div class="button-container">
+                                <a href="{{ article.url }}" target="_blank" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No news available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggested Additional Section: Legal Tips & FAQs -->
+    <section class="legal-tips">
+        <h2>Legal Tips & FAQs</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h3>What to Do If You're Arrested?</h3>
+                <p>Know your rights and the steps to take if you're arrested.</p>
+                <div class="button-container">
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="tip-card">
+                <h3>How to File a Consumer Complaint?</h3>
+                <p>Step-by-step guide to filing a consumer complaint in India.</p>
+                <div class="button-container">
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="tip-card">
+                <h3>Understanding Property Laws</h3>
+                <p>Learn about property registration, ownership, and disputes.</p>
+                <div class="button-container">
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="tip-card">
+                <h3>Divorce Laws in India</h3>
+                <p>Everything you need to know about divorce laws and procedures.</p>
+                <div class="button-container">
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %} 

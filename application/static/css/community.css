@@ -1,0 +1,266 @@
+/* General Styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #007bff;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #007bff;
+    margin: 10px auto 0;
+}
+
+/* Post Query Button - Right Aligned */
+.post-query {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.post-query .btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.post-query .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+
+/* Scrollable Query Row */
+.query-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 15px 0;
+    scroll-behavior: smooth;
+}
+
+.query-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+/* Query Card */
+.query-card {
+    flex: 0 0 30%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    min-width: 250px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.query-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.query-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.query-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.query-description {
+    font-size: 1rem;
+    color: #444;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 15px;
+}
+
+/* Replies Section */
+.replies {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.reply-card {
+    background: #eef;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.reply-card:hover {
+    background-color: #dde;
+}
+
+/* Hide Replies Initially */
+.hidden {
+    display: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #28a745;
+    color: white;
+    text-decoration: none !important;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Your Queries Section with Background */
+.your-queries-container {
+    background: url("../images/bk53.webp") no-repeat center center/cover;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.your-queries-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Domain Section */
+.domain-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.domain-row {
+    background: url("../images/bk51.jpg") no-repeat center center/cover;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.domain-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.query-card, .reply-card, .domain-row {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .query-card {
+        flex: 0 0 45%;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .query-card {
+        flex: 0 0 100%;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
